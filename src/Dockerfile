@@ -1,0 +1,14 @@
+FROM python:3.8.3-slim-buster
+
+WORKDIR /usr/src/app
+
+ENV PYTHONDONTWRITEBYTECODE 1
+
+COPY requirements.txt .
+
+RUN set -ex && \
+    pip install -U pip setuptools wheel && \
+    pip install -r /usr/src/app/requirements.txt && \
+    rm -rf /root/.cache/pip
+
+COPY . .
