@@ -21,10 +21,10 @@ def test_create_note(test_app, monkeypatch):
 
     monkeypatch.setattr(crud, 'post', mock_post)
 
-    reponse = test_app.post('/notes/', data=json.dumps(test_request_payload))
+    response = test_app.post('/notes/', data=json.dumps(test_request_payload))
 
-    assert reponse.status_code == 201
-    assert reponse.json() == test_response_payload
+    assert response.status_code == 201
+    assert response.json() == test_response_payload
 
 
 def test_create_note_invalid_json(test_app):
