@@ -4,23 +4,23 @@ services:
   web:
     build: ./src
     command: uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
-    volumes: 
+    volumes:
       - ./src:/usr/src/app
-    ports: 
+    ports:
       - 8000:8000
-    environment: 
+    environment:
       - DATABASE_URL=postgresql://hello_fastapi:hello_fastapi@db/hello_fastapi_dev
     depends_on:
       - db
-  
+
   db:
     image: postgres:12.3-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-    environment: 
+    environment:
       - POSTGRES_USER=hello_fastapi
       - POSTGRES_PASSWORD=hello_fastapi
       - POSTGRES_DB=hello_fastapi_dev
-  
-volumes: 
+
+volumes:
   postgres_data:
