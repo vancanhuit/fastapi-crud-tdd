@@ -1,0 +1,22 @@
+services:
+  - docker
+
+sudo: required
+
+env:
+  - DOCKER_COMPOSE_VERSION=1.26.0
+
+addons:
+  apt:
+    packages:
+      - docker-ce
+
+before_install:
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - sudo chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin/
+
+script:
+  - docker-compose up -d --build
+  - docker-compose exec web pytest .
