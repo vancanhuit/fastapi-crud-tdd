@@ -4,6 +4,7 @@
 - Tools:
   - [Python](https://www.python.org/) `3.6+`.
   - [Docker](https://docs.docker.com/) `19.03.8`.
+  - [Docker Compose](https://docs.docker.com/compose/) `1.26.0`.
   - [FastAPI](https://fastapi.tiangolo.com/) `0.58.0`.
   - [Uvicorn](http://www.uvicorn.org/) `0.11.5`.
   - [Databases](https://www.encode.io/databases/) `0.3.2`.
