@@ -1,5 +1,7 @@
 # Test Driven Development with Pytest and FastAPI
 
+![https://travis-ci.org/vancanhuit/fastapi-crud-tdd.svg?branch=master&status=passed](https://travis-ci.org/vancanhuit/fastapi-crud-tdd.svg?branch=master&status=passed)
+
 - Tutorial: [https://testdriven.io/blog/fastapi-crud/](https://testdriven.io/blog/fastapi-crud/#objectives).
 - Tools:
   - [Python](https://www.python.org/) `3.6+`.
