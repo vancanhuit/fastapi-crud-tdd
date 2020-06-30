@@ -18,6 +18,13 @@ before_install:
   - sudo chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin/
 
+before_script:
+  - docker --version
+  - docker-compose --version
+
 script:
   - docker-compose up -d --build
   - docker-compose exec web pytest .
+
+after_script:
+  - docker-compose down -v
